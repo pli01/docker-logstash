@@ -1,0 +1,16 @@
+version: '3'
+services:
+  logstash:
+    image: ci-tool-stack/logstash:${VERSION:-latest}
+    environment:
+# cf env2yaml
+      - pipeline.workers=2
+#     volumes:
+#      - ./logstash.yml:/usr/share/logstash/config/logstash.yml
+    ports:
+      - 9600:9600
+      - 5044:5044
+    networks:
+      - esnet
+networks:
+  esnet:
