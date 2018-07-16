@@ -1,0 +1,3 @@
+#
+PACKAGENAME ?= docker-logstash
+IMAGE_NAME ?= ci-tool-stack/logstash
